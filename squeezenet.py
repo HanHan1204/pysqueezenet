@@ -24,7 +24,7 @@ def squeeze():
 	model.add_node(Convolution2D(96, 3, 3, activation='relu', init='glorot_uniform',subsample=(2,2),border_mode='valid'),name='conv1', input='input')
 
 	#maxpool 1
-	model.add_node(MaxPooling2D((2,2)),name='maxpool1', input='conv1')
+	model.add_node(MaxPooling2D(pool_size=(3,3),strides=(2,2)),name='maxpool1', input='conv1')
 
 	#fire 1
 	model.add_node(Convolution2D(16, 1, 1, activation='relu', init='glorot_uniform',border_mode='same'),name='fire2_squeeze', input='maxpool1')
